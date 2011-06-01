@@ -156,7 +156,7 @@ If the Gist already exists in a buffer, switches to it"
           (delete-region (point-min) (point-max))
           (insert (shell-command-to-string
                 (concat
-                 "wget -q http://gist.github.com/"
+                 "wget --no-check-certificate -q http://gist.github.com/"
                  id
                  ".txt -O -")))
           (goto-char (point-min))
@@ -168,7 +168,7 @@ If the Gist already exists in a buffer, switches to it"
         (with-current-buffer gist-buffer
           (insert (shell-command-to-string
                 (concat
-                 "wget -q http://gist.github.com/"
+                 "wget --no-check-certificate -q http://gist.github.com/"
                  id
                  ".txt -O -")))
         (switch-to-buffer gist-buffer))))))
