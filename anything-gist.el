@@ -101,7 +101,7 @@ for the gist."
    (start-process "anything-gist-push" "*anything-gist-push*" shell-file-name shell-command-switch 
                   (concat
                    "cd " gist-tmp-dir
-                   "&& git add -A && git commit -m 'Updated file.'  && git push && wait && rm -r -f "
+                   "&& git add . && git commit -m 'Updated file.'  && git push && wait && rm -r -f "
                    gist-tmp-dir " &"))
    '(lambda (process event) (message " %s pushed successfully!!" process )))
 
