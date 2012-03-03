@@ -97,6 +97,7 @@ for the gist."
 (defun anything-gist-wrap-push ()
   (interactive)
   "After-save-hook to 'git add' the modified file and schedule a commit and push in the idle loop."
+  (message "start git push")
   (set-process-sentinel
    (start-process "anything-gist-push" "*anything-gist-push*" shell-file-name shell-command-switch 
                   (concat
